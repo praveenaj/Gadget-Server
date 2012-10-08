@@ -1,0 +1,8 @@
+
+<%
+var Caramel = require("caramel").Caramel;
+
+print(Caramel.getUser().username);
+
+
+%>

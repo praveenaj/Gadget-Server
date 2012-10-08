@@ -1,0 +1,38 @@
+<%
+var Caramel = require("caramel").Caramel;
+
+(function () {
+    var mod, obj, result, username, page, gadgetArea, gadgetPath, gadgetName
+    action = request.getParameter("action"),
+    msg = require("/conf/ui-messages.jag");
+    if (action === "addGadgetToUser") {
+        mod = Caramel.module("store/gadgets");
+
+        username = request.getParameter("username");
+        page = request.getParameter("page");
+        gadgetArea = request.getParameter("gadgetArea");
+        gadgetPath = request.getParameter("gadgetPath");
+        gadgetName = request.getParameter("gadgetName");
+
+        result = mod.addGadgetToUser(page, gadgetArea, gadgetPath, gadgetName);
+
+        if (result.error) {
+            obj = {
+                error:result.error,
+                message:result.message
+            };
+        } else {
+            obj = {
+                error:false
+            }
+        }
+        print(obj);
+    } else {
+        print({
+            error:true,
+            message:msg.error.invalidAction(action)
+        });
+    }
+}());
+
+%>

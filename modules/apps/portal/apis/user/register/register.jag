@@ -1,0 +1,39 @@
+<%
+var Caramel = require("caramel").Caramel;
+
+(function () {
+    var mod, obj, result, username, password, fname, lname, email,
+    action = request.getParameter("action"),
+    msg = require("/conf/ui-messages.jag");
+    if (action === "register") {
+        mod = Caramel.module("user");
+
+        var user = {
+            "firstname":request.getParameter("fname"),
+            "lastname":request.getParameter("lname"),
+            "username":request.getParameter("username"),
+            "password":request.getParameter("password"),
+            "email":request.getParameter("email")
+        };
+
+        result = mod.register(user);
+        if (result.error) {
+            obj = {
+                    error:result.error,
+                    message:result.message
+                };
+        } else {
+            obj = {
+                error:false,
+                user:result.user
+            }
+        }
+        print(obj);
+    } else {
+        print({
+            error:true,
+            message:msg.error.invalidAction(action)
+        });
+    }
+}());
+%>

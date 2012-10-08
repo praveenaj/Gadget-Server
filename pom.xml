@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.gs</groupId>
+    <artifactId>wso2gs-parent</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:svn:http://svn.wso2.org/repos/wso2/trunk/carbon/products/gadgetserver</connection>
+        <developerConnection>scm:svn:https://svn.wso2.org/repos/wso2/trunk/carbon/products/gs2
+        </developerConnection>
+    </scm>
+    <repositories>
+        <repository>
+            <id>wso2-maven2-repository</id>
+            <name>WSO2 Maven2 Repository</name>
+            <url>http://dist.wso2.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>wso2-maven2-snapshot-repository</id>
+            <name>WSO2 Maven2 Snapshot Repository</name>
+            <url>http://dist.wso2.org/snapshots/maven2/</url>
+        </repository>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <modules>
+        <module>modules/components/hostobjects</module>
+        <module>modules/components/gadget-server</module>
+        <module>modules/features/hostobjects</module>
+        <module>modules/features/gadget-server</module>
+        <module>modules/p2-profile-gen</module>
+        <module>modules/distribution</module>
+        <module>modules/integration</module>
+    </modules>
+
+    <properties>
+        <carbon.kernal.version>4.0.1</carbon.kernal.version>
+        <carbon.platform.version>4.0.0</carbon.platform.version>
+        <carbon.platform.patch.version>4.0.1</carbon.platform.patch.version>
+
+        <!-- jaggery versions -->
+        <jaggery.feature.version>0.9.0-SNAPSHOT</jaggery.feature.version>
+
+        <!-- feature versions -->
+        <ntask.feature.version>4.0.0</ntask.feature.version>
+
+        <carbon.p2.plugin.version>1.5.1</carbon.p2.plugin.version>
+
+        <!-- maven plugin versions -->
+        <build-helper-maven-plugin.version>1.7</build-helper-maven-plugin.version>
+        <maven-compiler-plugin.version>2.3.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
+        <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
+        <maven-surefire-plugin.version>2.12</maven-surefire-plugin.version>
+        <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
+        <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+        <felix.bundle.version>2.3.5</felix.bundle.version>
+        <felix.scr.version>1.7.2</felix.scr.version>
+        <mvn.gpg>1.0-alpha-3</mvn.gpg>
+        <maven-site-plugin.version>3.0</maven-site-plugin.version>
+        <maven-src-plugin.version>1.7.2</maven-src-plugin.version>
+        <maven-bunlde-plugin.version>2.3.5</maven-bunlde-plugin.version>
+        <maven-source-plugin.version>2.1.2</maven-source-plugin.version>
+        <maven-assembly-plugin.version>2.2-beta-2</maven-assembly-plugin.version>
+        <maven-project-info-report-plugin.version>2.4</maven-project-info-report-plugin.version>
+        <maven-buildnumber-plugin.version>1.1</maven-buildnumber-plugin.version>
+        <maven-dependency-plugin.version>2.4</maven-dependency-plugin.version>
+        <caramel.feature.version>1.0.0-SNAPSHOT</caramel.feature.version>
+    </properties>
+
+</project>

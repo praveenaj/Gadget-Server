@@ -1,0 +1,29 @@
+<%
+var Caramel = require("caramel").Caramel;
+var site = require("conf/site.json");
+
+(function () {
+Caramel.module("user").checkForAuthSession();
+Caramel.render({
+"name":"page/base",
+"inputs":{
+"title":"Gadget Server 2.0",
+"header":{
+"name":"menu/top"
+},
+"body":{
+"name":"layout/base",
+"inputs":{
+"side":{
+"name":"static"
+}
+}
+},
+"footer":{
+"name":"footer"
+}
+}
+});
+}());
+
+%>

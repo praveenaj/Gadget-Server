@@ -1,0 +1,7 @@
+{
+    "theme" : {
+        "base" : "default"
+    },
+    "context" : "/portal",
+    "authServerUrl" : "https://localhost:9443/admin/services/"
+}

@@ -1,0 +1,10 @@
+<module name="gs" xmlns="http://wso2.org/projects/jaggery/module.xml">
+    <hostObject>
+        <className>org.wso2.carbon.hostobjects.user.auth.CarbonAuthHostObject</className>
+        <name>CarbonAuth</name>
+    </hostObject>
+    <hostObject>
+        <className>org.wso2.carbon.hostobjects.user.registration.UserRegistrationHostObject</className>
+        <name>UserReg</name>
+    </hostObject>
+</module>

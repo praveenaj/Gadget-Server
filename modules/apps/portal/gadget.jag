@@ -1,0 +1,5 @@
+<%
+	var gadget = require('gadget');
+	gadget.url = 'http://localhost:9763/portal/gadgets/soa.xml';
+	gadget.toHTML();
+%>

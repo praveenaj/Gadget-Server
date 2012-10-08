@@ -1,0 +1,34 @@
+<%
+var Caramel = require("caramel").Caramel;
+var site = require("conf/site.json");
+
+(function () {
+    Caramel.module("user").checkForAuthSession();
+    Caramel.render({
+        "name":"page/base",
+        "inputs":{
+            "title":"Default Dashboard",
+            "appContext":site.context,
+            "theme":site.theme.base,
+            "header":{
+                    "name":"header/anonymous",
+                    "inputs":{
+                        "theme":site.theme.base
+                    }
+            },
+            "body":{
+                    "name":"dashboard",
+                    "inputs":{
+                         "dashName":"default",
+                         "gadgetArea":"main"
+                    }
+            },
+            "footer":{
+                "name":"footer"
+                }
+            }
+    });
+}());
+
+%>
+

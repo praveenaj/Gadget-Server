@@ -1,3 +1,11 @@
+    <div class="row">
+      
+      	<div class="span6 offset3 txt-center intro-txt">
+      		<h1>Build customized dashboards and pages in no time!</h1>
+      	</div>
+     </div>
+    
+    
      <div class="row">
 
       		<div class="login-box span5 center-box txt-center img-rounded box-shadow">

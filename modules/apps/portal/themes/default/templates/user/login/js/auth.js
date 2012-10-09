@@ -5,7 +5,10 @@ var User = User || ( function () {
                 username:$("#username").val(),
                 password:$("#password").val() },
             function (result) {
-                console.log(result)
+                console.log(result);
+                if (!result.error) {
+                    window.location.href = "dashboard.jag";
+                }
             }, "json");
     };
 

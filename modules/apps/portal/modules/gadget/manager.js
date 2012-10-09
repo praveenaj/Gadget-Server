@@ -1,19 +1,29 @@
 var getGadgets = function (path) {
+    var dataStore, gadgetsMeta, gadgets;
+
     if (path == null) {
         path = Caramel.module("manager").constants.PORTAL_GADGETS_PATH;
     }
 
-    var dataStore = Caramel.module("manager").getMetaDataStore();
-    var gadgetsMeta = dataStore.get(path);
+    dataStore = Caramel.module("manager").getMetaDataStore();
+    try {
+        gadgetsMeta = dataStore.get(path);
+    } catch(e) {
+        if(log.isDebug){
+            log.error(e.message + ": " + path);
+        }
+    }
 
-    var gadgets = [];
+    gadgets = [];
 
-    for (var i = 0; i < gadgetsMeta.getChildren().length; i++) {
-        var gadgetRegPath = gadgetsMeta.getChildren()[i];
-        var metaGadget = dataStore.get(gadgetRegPath);
-        var gadget = parse(metaGadget.content);
-        gadget.path = gadgetRegPath;
-        gadgets.push(gadget);
+    if(gadgetsMeta != null) {
+        for (var i = 0; i < gadgetsMeta.getChildren().length; i++) {
+            var gadgetRegPath = gadgetsMeta.getChildren()[i];
+            var metaGadget = dataStore.get(gadgetRegPath);
+            var gadget = parse(metaGadget.content);
+            gadget.path = gadgetRegPath;
+            gadgets.push(gadget);
+        }
     }
     return gadgets;
 };

@@ -1,8 +1,8 @@
-var checkForAuthSession = function () {
+var isUserLoggedIn = function () {
     var user = Caramel.getUser();
     if (!user) {
         response.sendRedirect(Caramel.getAbsoluteUrl("/login.jag"));
-        return;
+        return false;
     }
-    return;
+    return true;
 }

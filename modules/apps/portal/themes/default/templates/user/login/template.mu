@@ -24,7 +24,7 @@
                 </fieldset>
                 <hr>
                 <fieldset>
-                    <button type="button" class="btn btn-info" onclick="javascript:User.login();">Sign in</button>
+                    <button id="loginBtn" type="button" class="btn btn-info">Sign in</button>
                 </fieldset>
             </form>
         </div>

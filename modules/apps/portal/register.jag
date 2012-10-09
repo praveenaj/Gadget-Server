@@ -2,6 +2,9 @@
 var Caramel = require("caramel").Caramel;
 var site = require("conf/site.json");
 
+var log = new Log();
+log.isDebug = true;
+
 (function () {
     Caramel.render({
         "name":"page/base",

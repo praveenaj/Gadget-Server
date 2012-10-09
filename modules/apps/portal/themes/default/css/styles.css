@@ -116,6 +116,10 @@ width:100%;
 margin:24px 0 0;
 }
 
+#alert{
+display:none;
+}
+
 @media (min-width: 768px) and (max-width:979px){
 	.center-box input, .center-box button {
 	padding:0;

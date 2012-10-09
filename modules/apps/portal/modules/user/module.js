@@ -8,8 +8,8 @@ Caramel.module("user", {
         return Caramel.require(Caramel.getModulesDir() + "user/login.js").logout.apply(this, arguments);
     },
 
-    checkForAuthSession:function () {
-        return Caramel.require(Caramel.getModulesDir() + "user/util.js").checkForAuthSession.apply(this, arguments);
+    isUserLoggedIn:function () {
+        return Caramel.require(Caramel.getModulesDir() + "user/util.js").isUserLoggedIn.apply(this, arguments);
     },
 
     register:function () {

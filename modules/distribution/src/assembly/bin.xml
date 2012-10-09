@@ -124,6 +124,20 @@
                 <include>*/**</include>
             </includes>
         </fileSet>
+        <fileSet>
+            <directory>../../gs</directory>
+            <outputDirectory>wso2gs-${pom.version}/modules/gs</outputDirectory>
+            <includes>
+                <include>*/**</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>../p2-profile-gen/target/wso2carbon-core-${carbon.platform.patch.version}/dbscripts/identity/</directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/dbscripts/identity</outputDirectory>
+            <includes>
+                <include>**/**.sql</include>
+            </includes>
+        </fileSet>
 
     </fileSets>
 
@@ -242,13 +256,13 @@
         </file-->
 
 
-<!--        <file>
+        <file>
             <source>
-                ../p2-profile-gen/target/wso2carbon-core-${wso2carbon.kernal.version}/repository/conf/identity.xml
+                ../p2-profile-gen/target/wso2carbon-core-${carbon.kernal.version}/repository/conf/identity.xml
             </source>
             <outputDirectory>wso2gs-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
-        </file>-->
+        </file>
 
 <!--        <file>
             <source>conf/wso2is-user-certs.jks</source>

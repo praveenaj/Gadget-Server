@@ -2,8 +2,13 @@
 var Caramel = require("caramel").Caramel;
 var site = require("conf/site.json");
 
+var log = new Log();
+log.isDebug = true;
+
 (function () {
-    Caramel.module("user").checkForAuthSession();
+    if(!Caramel.module("user").isUserLoggedIn()){
+        return;
+    }
     Caramel.render({
         "name":"page/base",
         "inputs":{

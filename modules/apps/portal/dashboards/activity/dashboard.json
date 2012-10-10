@@ -1,0 +1,7 @@
+{
+    "id":"1",
+    "name":"activity",
+    "author":"nuwan bandara",
+    "url":"http://localhost:9763/portal/dashboards/activity/activityboard.jag",
+    "description":"Activity Dashboard"
+}

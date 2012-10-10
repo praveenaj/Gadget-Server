@@ -22,5 +22,6 @@ public class GadgetServerConstents {
     public static final String REPOSITORY_DASHBOARDS_LOCATION = "/repository/portal/dashboards/";
     public static final String REPOSITORY_USERS_LOCATION = "/repository/portal/users/";
     public static final String GADGET_CONF_FILE_NAME = "gadget.json";
+    public static final String DASHBOARD_CONF_FILE_NAME = "dashboard.json";
 
 }

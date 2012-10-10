@@ -29,6 +29,23 @@ var Caramel = require("caramel").Caramel;
             }
         }
         print(obj);
+    } else if (action === "userExists") {
+        mod = Caramel.module("user");
+
+        var username = request.getParameter("username");
+
+        result = mod.userExists(username);
+        if (result) {
+             obj = {
+               error:true,
+               message:"Username already exists"
+             };
+        } else {
+             obj = {
+                error:false
+             }
+        }
+        print(obj);
     } else {
         print({
             error:true,

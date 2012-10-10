@@ -11,7 +11,19 @@ var User = User || ( function () {
                 console.log(result)
             }, "json");
     };
+
+    var userExists = function () {
+        $.get("/portal/apis/user/register/register.jag", {
+                action:"userExists",
+                username:$("#username").val()},
+            function (result) {
+                console.log(result)
+            }, "json");
+    }
+
     return {
-        register:register
+        register:register,
+        userExists:userExists
     };
+
 }());

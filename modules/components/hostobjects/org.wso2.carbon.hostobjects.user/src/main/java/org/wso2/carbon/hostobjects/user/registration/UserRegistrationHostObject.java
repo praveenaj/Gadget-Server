@@ -86,4 +86,25 @@ public class UserRegistrationHostObject extends ScriptableObject {
         return row;
 
     }
+
+    public static boolean jsFunction_userExists(Context cx, Scriptable thisObj, Object[] args, Function funObj)
+            throws ScriptException {
+        String functionName = "userExists";
+        int argsCount = args.length;
+        if (argsCount != 1) {
+            HostObjectUtil.invalidNumberOfArgs(hostObjectName, functionName, argsCount, false);
+        }
+        if (!(args[0] instanceof String)) {
+            HostObjectUtil.invalidArgsError(hostObjectName, functionName, "1", "String", args[0], false);
+        }
+
+        String username = (String) args[0];
+
+        UserRegistrationImpl userRegistration = new UserRegistrationImpl();
+        try {
+            return userRegistration.userExists(username);
+        } catch (Exception e) {
+            throw new ScriptException(e);
+        }
+    }
 }

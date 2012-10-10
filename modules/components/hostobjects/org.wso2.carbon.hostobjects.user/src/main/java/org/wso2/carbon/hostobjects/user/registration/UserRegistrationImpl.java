@@ -80,4 +80,16 @@ public class UserRegistrationImpl {
         }
     }
 
+    public boolean userExists(String username) throws Exception {
+        UserStoreManager admin = null;
+        UserRealm realm = null;
+        realm = IdentityTenantUtil.getRealm(null, null);
+
+        admin = realm.getUserStoreManager();
+        if (admin.getUserId(username) < 0) {
+            return false;
+        }
+        return true;
+    }
+
 }

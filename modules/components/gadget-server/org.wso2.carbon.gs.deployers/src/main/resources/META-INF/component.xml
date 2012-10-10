@@ -18,5 +18,14 @@
             <directory>jaggeryapps/portal/gadgets</directory>
             <class>org.wso2.carbon.gs.deployers.GadgetDeployer</class>
         </deployer>
+        <deployer>
+            <directory>jaggeryapps/portal/dashboards</directory>
+            <extension>gar</extension>
+            <class>org.wso2.carbon.gs.deployers.DashboardDeployer</class>
+        </deployer>
+        <deployer>
+            <directory>jaggeryapps/portal/dashboards</directory>
+            <class>org.wso2.carbon.gs.deployers.DashboardDeployer</class>
+        </deployer>
     </deployers>
 </component>

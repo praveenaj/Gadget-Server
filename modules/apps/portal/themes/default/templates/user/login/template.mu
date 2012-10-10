@@ -29,7 +29,7 @@
 							</fieldset>
 							<hr>
 							  <fieldset>
-                    <button id="loginBtn" type="button" class="btn btn-info">Sign in</button>
+                    <button id="loginBtn" type="button" class="btn btn-info"><span id="signin">Sign in</span><span id="loading" style="display: none;"><img src="{{appContext}}/themes/{{theme}}/img/ajax-loader.gif" style="height:19px"></span></button>
                 </fieldset>
 						</form>
       		</div>

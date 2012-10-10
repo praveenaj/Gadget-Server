@@ -19,11 +19,16 @@ log.isDebug = true;
                 }
             },
             "body":{
-                "name":"user/login"
-
+                "name":"user/login",
+                "inputs":{
+                      "theme":site.theme.base
+                }
              },
              "footer":{
-                "name":"footer"
+                "name":"footer",
+                "inputs":{
+                     "theme":site.theme.base
+                 }
              }
 
         }

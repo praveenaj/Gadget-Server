@@ -22,7 +22,7 @@
 								<div class="controls controls-row span4">
 										<span class="span2">
 											<label>Choose a username</label>
-											<input id="username" class="span3" name="username" type="text" placeholder="ex: john123">
+											<input id="username" class="span2" name="username" type="text" placeholder="ex: john123">
 										</span>
 										<span class="span2">
 											 <button id="btn-availability" type="button" class="btn btn-availability span2">Check availability</button>

@@ -54,6 +54,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-scr-plugin</artifactId>
+                <version>${maven-src-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -63,7 +64,13 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
+                        <Export-Package>
+                            org.wso2.carbon.gs.*;
+                        </Export-Package>
+                        <Import-Package>
+                            *;resolution:=optional
+                        </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                         <Axis2Deployer>GadgetDeployer</Axis2Deployer>
                     </instructions>
                 </configuration>

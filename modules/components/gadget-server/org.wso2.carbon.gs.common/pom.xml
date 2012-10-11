@@ -4,11 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>org.wso2.carbon</groupId>
-        <artifactId>carbon-components</artifactId>
-        <version>4.0.0</version>
+        <artifactId>GadgetServer-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.carbon</groupId>
     <artifactId>org.wso2.carbon.gs.common</artifactId>
     <version>1.0.0</version>
     <packaging>bundle</packaging>

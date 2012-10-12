@@ -46,11 +46,11 @@
 								<div class="controls controls-row span4">
 									<span class="span2">
 										<label>Password</label>
-										<input class="span2 in-password1" name="password1" type="text" id="password1">
+										<input class="span2 in-password1" name="password1" type="text">
 									</span>
 									<span class="span2 pull-right">
 										<label>Confirm password</label>
-										<input class="span2 in-password2" name="password2" type="text" id="password2">
+										<input class="span2 in-password2" name="password" type="text">
 									</span>
 								</div>	
 					

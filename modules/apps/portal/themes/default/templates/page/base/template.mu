@@ -15,14 +15,8 @@
     <link href="{{appContext}}/themes/{{theme}}/css/styles.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
-    <script type="text/javascript" src="{{appContext}}/themes/{{theme}}/js/jquery-1.8.2.min.js"></script>
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    {{printJS}}
     {{printCSS}}
+    
 </head>
 
 {{include header}}

@@ -121,8 +121,8 @@
                                     <fileset dir="target/shindig/WEB-INF/lib" includes="slf4j*"/>
                                 </delete>
 
-                                <zip destfile="target/ROOT.war"
-                                     basedir="target/shindig"  />
+                                <!--<zip destfile="target/ROOT.war"
+                                     basedir="target/shindig"  />-->
 
                                 <concat destfile="target/wso2carbon-core-${carbon.kernal.version}/repository/log4j.properties">og4j.logger.net.sf.ehcache=ERROR</concat>
 
@@ -147,7 +147,7 @@
                                 <delete dir="target/site"/>
                                 <delete dir="target/antrun"/>
                                 <delete dir="src/site"/>
-                                <delete file="target/ROOT.war"/>
+                                <!--<delete file="target/ROOT.war"/>-->
                                 <delete dir="target/shindig"/>
                             </tasks>
                         </configuration>

@@ -14,5 +14,9 @@ Caramel.module("user", {
 
     register:function () {
         return Caramel.require(Caramel.getModulesDir() + "user/register.js").register.apply(this, arguments);
+    },
+
+    userExists:function () {
+        return Caramel.require(Caramel.getModulesDir() + "user/register.js").userExists.apply(this, arguments);
     }
 });

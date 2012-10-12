@@ -138,6 +138,13 @@
                 <include>**/**.sql</include>
             </includes>
         </fileSet>
+        <fileSet>
+            <directory>target/shindig</directory>
+            <outputDirectory>wso2gs-${pom.version}/repository/deployment/server/webapps/ROOT</outputDirectory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
 
     </fileSets>
 
@@ -170,10 +177,10 @@
 
     <files>
 
-        <file>
-            <source>target/ROOT.war</source>
-            <outputDirectory>wso2gs-${pom.version}/repository/deployment/server/webapps</outputDirectory>
-        </file>
+<!--        <file>
+            <source>target/shindig</source>
+            <outputDirectory>wso2gs-${pom.version}/repository/deployment/server/webapps/ROOT</outputDirectory>
+        </file>-->
 
         <file>
             <source>INSTALL.txt</source>

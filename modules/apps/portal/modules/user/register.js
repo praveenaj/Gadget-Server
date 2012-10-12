@@ -22,3 +22,11 @@ var register = function (user) {
     };
 
 };
+
+var userExists = function (username) {
+    var result,
+        manager = Caramel.module("manager"),
+        regAgent = manager.getRegistrationAgent();
+
+    return regAgent.userExists(username);
+};

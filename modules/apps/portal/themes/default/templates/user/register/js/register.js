@@ -11,7 +11,16 @@ var User = User || ( function () {
                     lname:$("#lname").val(),
                     email:$("#email").val()},
                 function (result) {
-                    console.log(result)
+                    console.log(result);
+                    if (!result.error) {
+                        $("#alert").show();
+                        $("#alert #alert-msg").html('Registration Successful <a href="login.jag">Sign in</a>');
+                        $("#alert").removeClass("alert-error");
+                        $("#alert").addClass("alert-success");
+                    } else {
+                        $("#alert").show();
+                        $("#alert #alert-msg").text(result.message.split(":")[1]);
+                    }
                 }, "json");
         } else {
             console.log("password miss match");
@@ -30,7 +39,16 @@ var User = User || ( function () {
                 action:"userExists",
                 username:$("#username").val()},
             function (result) {
-                console.log(result)
+                console.log(result);
+                if (!result.error) {
+                    $("#alert").show();
+                    $("#alert #alert-msg").html('Username Available');
+                    $("#alert").removeClass("alert-error");
+                    $("#alert").addClass("alert-success");
+                } else {
+                    $("#alert").show();
+                    $("#alert #alert-msg").text(result.message);
+                }
             }, "json");
     }
 

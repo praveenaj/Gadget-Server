@@ -44,6 +44,7 @@ var renderGadget = function (gadget) {
     var mod = require('gadget');
     var rGadget = new mod.Gadget();
     rGadget.url = gadget.url;
+    rGadget.parent = 'http://localhost:9763/portal/dashboard.jag';
     return rGadget.getHTML();
 };
 

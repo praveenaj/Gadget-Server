@@ -43,6 +43,7 @@ var saveGadget = function (gadget, path) {
 var renderGadget = function (gadget) {
     var mod = require('gadget');
     var rGadget = new mod.Gadget();
+    rGadget.shindigBaseUrl = 'http://192.168.1.3:9763/gadgets/ifr';
     rGadget.url = gadget.url;
     rGadget.parent = 'http://localhost:9763/portal/dashboard.jag';
     return rGadget.getHTML();

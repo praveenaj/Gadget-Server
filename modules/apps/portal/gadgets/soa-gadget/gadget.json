@@ -4,5 +4,5 @@
     "author":"nuwan bandara",
     "url":"http://localhost:9763/portal/gadgets/soa-gadget/soa.xml",
     "description": "the SOA fead Gadget",
-    "preferences": {"num_entries":"10"}
+    "preferences": {"num_entries":"5"}
 }

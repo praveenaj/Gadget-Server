@@ -17,7 +17,7 @@
 				<div>
 					<div class="widget-header">
 						<h2>Widget Title</h2>
-						<a class="show-options"><img src="{{appContext}}/themes/{{theme}}/img/icon-widget-three-dots.png"></a>
+						<a class="show-options"><img src="{{appContext}}/themes/default/img/icon-widget-three-dots.png"></a>
 						<ul class="widget-controls">
 							<li>
 								<a href="#"><i class="icon-cog"></i></a>

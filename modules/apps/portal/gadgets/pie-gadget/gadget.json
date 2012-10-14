@@ -1,0 +1,7 @@
+{
+    "id":"1",
+    "name":"pie-gadget",
+    "author":"nuwan bandara",
+    "url":"http://localhost:9763/portal/gadgets/pie-gadget/pie.xml",
+    "description": "Pie Chart"
+}

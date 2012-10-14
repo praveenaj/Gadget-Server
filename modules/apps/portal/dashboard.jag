@@ -25,6 +25,7 @@ log.isDebug = true;
                     "name":"dashboard",
                     "inputs":{
                          "dashName":"default",
+                         "theme":site.theme.base,
                          "gadgetArea":"main"
                     }
             },

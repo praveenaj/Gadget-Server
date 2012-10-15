@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
 
     <div class="span6 offset3 txt-center intro-txt">

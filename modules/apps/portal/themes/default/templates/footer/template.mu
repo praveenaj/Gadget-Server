@@ -40,17 +40,54 @@
 			widget_base_dimensions : [370, 370]
 		});
 
+
+ function autoIframe(frameId){
+        try{
+            frame = $(frameId);
+            innerDoc = (frame.contentDocument) ? frame.contentDocument : frame.contentWindow.document;
+ 
+            if (innerDoc == null){
+                            // Google Chrome
+                frame.height = document.all[frameId].clientHeight + document.all[frameId].offsetHeight + document.all[frameId].offsetTop;
+                alert("Chrome!");
+            }
+                    else{
+                    objToResize = (frame.style) ? frame.style : frame;
+                    objToResize.height = innerDoc.body.scrollHeight + 18;
+                    }
+        }
+ 
+        catch(err){
+                alert('Err: ' + err.message);
+            window.status = err.message;
+        }
+    }
+    
+    
+		 
 		$('iframe').load(function() {
 			// Set inline style to equal the body height of the iframed content.
 			//this.style.height = this.contentWindow.document.body.offsetHeight + 'px';
-			this.style.height = this.contentWindow.document.body.scrollHeight + 'px';
-
+		//	this.style.height = (this.contentWindow.document.body.scrollHeight - 100) +  'px';
+			//alert($(this).height() );
+			//alert( (this.contentWindow.document.body.scrollHeight) +  'px' );
+			//$(this).height((this.contentWindow.document.body.scrollHeight) +  'px' );
+		//	if (window.parent && window.parent.autoIframe) {
+		//		window.parent.autoIframe($(this));
+		//	}
+			//alert($("iframe",top.document).height());
+			
 		});
 
 		$(".gridster .widget-content > iframe").load(function() {
 			//$(".gridster > ul > li").height($(this).height() + 70);
-			$(".gridster .widget-content").height($(this).height());
+			//$(".gridster .widget-content").height($(this).height());
 			//alert($(this).height() );
+//			$(this).height($(this).contents().find("html").height());
+
+// var heightDiv  = jQuery("iframe",top.document).contents().attr("height")+"px";                                        
+//jQuery("iframe",top.document).css({height:heightDiv});
+                 
 		});
 
 		function responsiveWidget() {
@@ -93,7 +130,63 @@
 
 
 	});
+/*
 
+    $(function(){
+    
+        var iFrames = $('iframe');
+      
+    	function iResize() {
+    	
+    		for (var i = 0, j = iFrames.length; i < j; i++) {
+    		  iFrames[i].style.height = iFrames[i].contentWindow.document.body.offsetHeight + 'px';}
+    	    }
+    	    
+        	if ($.browser.safari || $.browser.opera) { 
+        	
+        	   iFrames.load(function(){
+        	       setTimeout(iResize, 0);
+               });
+            
+        	   for (var i = 0, j = iFrames.length; i < j; i++) {
+        			var iSource = iFrames[i].src;
+        			iFrames[i].src = '';
+        			iFrames[i].src = iSource;
+               }
+               
+        	} else {
+        	   iFrames.load(function() { 
+        	       this.style.height = this.contentWindow.document.body.offsetHeight + 'px';
+        	   });
+        	}
+        
+        });
+        
+       */ 
+       
+       /*
+       
+        function autoIframe(frameId){
+        try{
+            frame = document.getElementById(frameId);
+            innerDoc = (frame.contentDocument) ? frame.contentDocument : frame.contentWindow.document;
+ 
+            if (innerDoc == null){
+                            // Google Chrome
+                frame.height = document.all[frameId].clientHeight + document.all[frameId].offsetHeight + document.all[frameId].offsetTop;
+            }
+                    else{
+                    objToResize = (frame.style) ? frame.style : frame;
+                    objToResize.height = innerDoc.body.scrollHeight + 18;
+                    }
+        }
+ 
+        catch(err){
+                alert('Err: ' + err.message);
+            window.status = err.message;
+        }
+    }
+    */
 </script>
 
 </body>

@@ -1,19 +1,11 @@
-<!--
-<ul class="gadget_list">
-{{#each gadgets}}
-<div class="gadget_frame">
-<div style="height:300px;">{{{ this }}}</div>
-</div>
-{{/each}}
-</ul>
--->
+<div class="container">
 
-<section class="widgets">
+<div class="gadgets">
 	<div class="gridster row">
 		<ul class="span12">
 			{{#each gadgets}}
 			<!-- load row and column from the db, auto-adjust height according to iframe height-->
-			<li class="img-rounded span4" data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+			<li class="widget img-rounded span4" data-row="1" data-col="1" data-sizex="1" data-sizey="1">
 				<div>
 					<div class="widget-header">
 						<h2>Widget Title</h2>
@@ -44,5 +36,5 @@
 		</ul>
 	</div>
 
-</section>
+</div>
 

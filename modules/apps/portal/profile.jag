@@ -6,14 +6,12 @@ var log = new Log();
 log.isDebug = true;
 
 (function () {
-	
-	
     Caramel.render({
         "name":"page/base",
         "inputs":{
             "appContext":site.context,
             "theme":site.theme.base,
-            "title":"Login",
+            "title":"Profile",
             "header":{
                 "name":"header/anonymous",
                 "inputs":{
@@ -21,10 +19,7 @@ log.isDebug = true;
                 }
             },
             "body":{
-                "name":"user/login",
-                "inputs":{
-                      "theme":site.theme.base
-                }
+                "name":"user/profile"
              },
              "footer":{
                 "name":"footer",

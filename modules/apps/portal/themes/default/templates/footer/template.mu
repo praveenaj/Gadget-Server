@@ -6,6 +6,8 @@
 </footer>
 
 </div>
+
+	
 <!-- /container -->
 
 <!-- Le javascript -->
@@ -62,6 +64,7 @@
             window.status = err.message;
         }
     }
+    
     
     
 		 
@@ -187,6 +190,18 @@
         }
     }
     */
+   
+   function sizeFrame() {
+          jQuery("#testFrame", top.document).css({ height: 0 });
+          var heightDiv = jQuery("#testFrame", top.document).contents().find('body').attr('scrollHeight');
+         // alert(heightDiv);
+          jQuery("#testFrame", top.document).css({ height: heightDiv });
+     }
+ 
+     jQuery(function() {
+          sizeFrame();
+          jQuery("#testFrame").load(sizeFrame);            
+     });
 </script>
 
 </body>

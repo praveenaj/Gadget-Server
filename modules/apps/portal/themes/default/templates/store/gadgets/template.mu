@@ -23,6 +23,95 @@
 	</div>
 </div>
 
+<!-- Modal -->
+<div class="modal hide" id="modal-gadget" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true" style="display: none">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			×
+		</button>
+		<h3 id="modal-gadget-title">Loading...</h3>
+	</div>
+	<div class="modal-body">
+		<div class="modal-left">
+			<ul>
+				<li>
+					<img class="gadget-preview" src="{{appContext}}/themes/default/img/profile-pic.png">
+				</li>
+				<li>
+					<button class="btn btn-info">
+						Remove
+					</button>
+				</li>
+				<li>
+					<h4>User ratings</h4>
+					<ul class="widget-rating">
+						<li>
+							<i class="icon-star"></i>
+						</li>
+						<li>
+							<i class="icon-star"></i>
+						</li>
+						<li>
+							<i class="icon-star"></i>
+						</li>
+						<li>
+							<i class="icon-star-empty"></i>
+						</li>
+						<li>
+							<i class="icon-star-empty"></i>
+						</li>
+					</ul>
+
+				</li>
+				<li>
+					<h4>12 added this</h4>
+				</li>
+			</ul>
+		</div>
+		<div class="modal-right">
+			<div class="modal-description">
+				<h5>Gadget Description</h5>
+				<p id="modal-gadget-desc">
+					Loading...
+				</p>
+
+			</div>
+			<div class="modal-reviews">
+					<h5>Reviews (12)</h5>
+				<ul>
+					<li>
+						<p>
+							Review 1 goes here...
+						</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+					</li>
+					<li>
+						<p>
+							Review 1 goes here...
+						</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+					</li>
+					<li>
+						<p>
+							Review 1 goes here...
+						</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+					</li>
+					<li>
+						<p>
+							Review 1 goes here...
+						</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+					</li>
+				</ul>
+				<form>
+					<textarea rows="3"></textarea>
+					<button type="submit" class="btn">
+						Submit
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
 <div class="container">
 
 	<div class="store row">
@@ -30,7 +119,7 @@
 		{{#each gadgets}}
 		<div class="img-rounded span4 widget">
 			<div class="widget-header">
-				<h4><a href="{{this.url}}">{{this.name}}</a></h4>
+				<h4><a id="{{this.name}}" data-toggle="modal">{{this.name}}</a></h4>
 
 				<ul class="widget-controls">
 

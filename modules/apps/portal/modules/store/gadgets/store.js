@@ -20,3 +20,6 @@ var addGadgetToUser= function (page, gadgetArea, gadgetPath, gadgetName) {
 };
 
 
+var getGadgetToModal = function(gadgetName){
+	return Caramel.module("gadget").getGadget(gadgetName);
+}

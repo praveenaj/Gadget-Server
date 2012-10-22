@@ -6,7 +6,7 @@
 			{{#each gadgets}}
 			<!-- load row and column from the db, auto-adjust height according to iframe height-->
 			<li class="widget img-rounded span4" data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-				<div>
+				<div style="height: 100%">
 					<div class="widget-header">
 						<h2>Widget Title</h2>
 						<a class="show-options"><img src="{{appContext}}/themes/default/img/icon-widget-three-dots.png"></a>

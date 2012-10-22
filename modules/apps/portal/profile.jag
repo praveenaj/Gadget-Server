@@ -11,7 +11,7 @@ log.isDebug = true;
         "inputs":{
             "appContext":site.context,
             "theme":site.theme.base,
-            "title":"Login",
+            "title":"Profile",
             "header":{
                 "name":"header/anonymous",
                 "inputs":{
@@ -19,10 +19,7 @@ log.isDebug = true;
                 }
             },
             "body":{
-                "name":"user/login",
-                "inputs":{
-                      "theme":site.theme.base
-                }
+                "name":"user/profile"
              },
              "footer":{
                 "name":"footer",
@@ -30,6 +27,7 @@ log.isDebug = true;
                      "theme":site.theme.base
                  }
              }
+
         }
     });
 }());

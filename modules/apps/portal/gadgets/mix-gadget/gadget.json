@@ -2,6 +2,6 @@
     "id":"1",
     "name":"mix-gadget",
     "author":"nuwan bandara",
-    "url":"http://localhost:9763/portal/gadgets/mix-gadget/mix.xml",
+    "url":"http://10.100.2.69:9763/portal/gadgets/mix-gadget/mix.xml",
     "description": "Mix Chart"
 }

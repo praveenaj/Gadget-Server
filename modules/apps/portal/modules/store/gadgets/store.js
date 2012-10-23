@@ -3,15 +3,22 @@ var getGadgetsToStore = function () {
 
 };
 
-var addGadgetToUser= function (page, gadgetArea, gadgetPath, gadgetName) {
+var addGadgetToUser = function (page, gadgetArea, gadgetPath, gadgetName) {
 
     var user = Caramel.getUser();
 
-    var path = Caramel.module("manager").getUserGadgetsPath(user, page, gadgetArea)
-        + "/" + gadgetName;
+    /*var path = Caramel.module("manager").getUserGadgetsPath(user, page, gadgetArea)
+     + "/" + gadgetName + "-link";*/
+    var path = Caramel.module("manager").getUserGadgetsPath(user, page, gadgetArea);
 
     var dataStore = Caramel.module("manager").getMetaDataStore();
-    dataStore.createLink(path, gadgetPath);
+
+    if (!dataStore.resourceExists(path)) {
+        dataStore.put(path, dataStore.newCollection());
+    }
+
+    dataStore.createLink(path + "/" + gadgetName, gadgetPath);
+    //dataStore.createLink("/test", gadgetPath);
 
     var created = dataStore.resourceExists(path);
 
@@ -20,6 +27,6 @@ var addGadgetToUser= function (page, gadgetArea, gadgetPath, gadgetName) {
 };
 
 
-var getGadgetToModal = function(gadgetName){
-	return Caramel.module("gadget").getGadget(gadgetName);
+var getGadgetToModal = function (gadgetName) {
+    return Caramel.module("gadget").getGadget(gadgetName);
 }

@@ -23,6 +23,8 @@ import org.apache.axis2.deployment.AbstractDeployer;
 import org.apache.axis2.deployment.DeploymentException;
 import org.apache.axis2.deployment.repository.util.DeploymentFileData;
 import org.apache.catalina.util.MIME2Java;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.eclipse.wst.validation.internal.RegistryConstants;
 import org.wso2.carbon.gs.common.GadgetServerConstents;
 import org.wso2.carbon.registry.core.Registry;
@@ -36,6 +38,8 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 public class GadgetDeployer extends AbstractDeployer {
+    private static Log log = LogFactory.getLog(GadgetDeployer.class);
+
     @Override
     public void init(ConfigurationContext configurationContext) {
         //To change body of implemented methods use File | Settings | File Templates.
@@ -76,7 +80,11 @@ public class GadgetDeployer extends AbstractDeployer {
                 Resource resource = registry.newResource();
                 resource.setMediaType("application/json");
                 resource.setContentStream(in);
-                registry.put(GadgetServerConstents.REPOSITORY_GADGETS_LOCATION + deploymentFileData.getFile().getName(), resource);
+                if (!registry.resourceExists(GadgetServerConstents.REPOSITORY_GADGETS_LOCATION + deploymentFileData.getFile().getName())) {
+                    registry.put(GadgetServerConstents.REPOSITORY_GADGETS_LOCATION + deploymentFileData.getFile().getName(), resource);
+                } else {
+                    log.info("Gadget Already exists");
+                }
             }
         }
 

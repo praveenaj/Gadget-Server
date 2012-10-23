@@ -53,13 +53,13 @@ var getGadget = function(name) {
 
 };
 
-var saveGadget = function(gadget, path) {
+/*var saveGadget = function(gadget, path) {
 
 	var dataStore = Caramel.module("manager").getMetaDataStore();
 	var resource = dataStore.newResource();
 	resource.content = stringify(that);
 	dataStore.put(path + '/' + that.name, resource);
-};
+};*/
 
 var renderGadget = function(gadget) {
 	var mod = require('gadget');

@@ -44,7 +44,7 @@ public class DeployerContext {
             if (registryService.getUserRealm(tenantId).getUserStoreManager().isExistingUser(mashupAuthor)) {
                 return registryService.getGovernanceUserRegistry(mashupAuthor, tenantId);
             } else {
-                throw new CarbonException("Unable to access Registry, mashup author is not an active user");
+                throw new CarbonException("Unable to access Registry");
             }
         } catch (UserStoreException e) {
             log.error(e.getMessage(), e);

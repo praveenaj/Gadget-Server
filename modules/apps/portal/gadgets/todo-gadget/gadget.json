@@ -2,7 +2,7 @@
     "id":"2",
     "name":"todo-gadget",
     "author":"nuwan bandara",
-    "url":"http://10.100.2.69:9763/portal/gadgets/todo-gadget/todo.xml",
+    "url":"http://localhost:9763/portal/gadgets/todo-gadget/todo.xml",
     "description": "the TODO Gadget",
     "preferences": {"num_entries":"10"}
 }

@@ -70,7 +70,7 @@
 
             <hr>
             <fieldset>
-                <button type="button" class="btn btn-info" onclick="javascript:User.register();">Sign up</button>
+                <button type="button" class="btn btn-primary btn-large" onclick="javascript:User.register();">Sign up</button>
             </fieldset>
         </form>
     </div>

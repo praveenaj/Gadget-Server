@@ -10,6 +10,11 @@ Caramel.module("store/gadgets", {
     
     getGadgetToModal:function(){
     	return Caramel.require(Caramel.getModulesDir() + "store/gadgets/store.js").getGadgetToModal.apply(this,arguments);
+    },
+    
+    searchGadget:function(){
+    	return Caramel.require(Caramel.getModulesDir() + "store/gadgets/store.js").searchGadget.apply(this,arguments);
     }
+    
 
 });

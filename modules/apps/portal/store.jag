@@ -12,7 +12,7 @@ log.isDebug = true;
     Caramel.render({
         "name":"page/base",
         "inputs":{
-            "title":"Gadget Server 2.0",
+            "title":"Gadget Store",
             "appContext":site.context,
             "theme":site.theme.base,
             "header":{

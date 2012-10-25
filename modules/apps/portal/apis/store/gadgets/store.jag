@@ -2,9 +2,13 @@
 var Caramel = require("caramel").Caramel;
 
 (function () {
-    var mod, obj, result, username, page, gadgetArea, gadgetPath, gadgetName
+    var mod, obj, result, username, page, gadgetArea, gadgetPath, gadgetName, query
     action = request.getParameter("action"),
     msg = require("/conf/ui-messages.jag");
+    
+    
+    var log = new Log();
+    
     
     switch(action){
     	
@@ -52,6 +56,27 @@ var Caramel = require("caramel").Caramel;
 	            };
     		}
     		print(obj);
+    	break;
+    	
+    	case "search":
+    	
+    	/*
+   			mod = Caramel.module("store/gadgets");
+    		query = request.getParameter("query");
+    		
+    		result = mod.searchGadget(query);
+    		
+    		if(result.error){
+    			
+    		} else {
+    			obj = {
+    				//TODO: page num for pagination
+    				searchResults:result
+    			};
+    		}
+    		print(obj);
+    		
+    		*/
     	break;
     	
     	default:

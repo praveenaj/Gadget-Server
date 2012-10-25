@@ -79,7 +79,7 @@
 
 				<hr>
 				<fieldset>
-					<button type="button" class="btn btn-info" onclick="javascript:User.register();">
+					<button type="button" class="btn btn-primary" onclick="javascript:User.register();">
 						Save Changes
 					</button>
 				</fieldset>

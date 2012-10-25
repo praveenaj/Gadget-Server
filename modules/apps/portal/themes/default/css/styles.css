@@ -14,6 +14,7 @@ h4, h5 {
 a {
 	color: #009f94;
 	text-decoration: none;
+	outline: 0;
 }
 
 a:hover {
@@ -110,7 +111,7 @@ li {
 	margin-left: 0;
 }
 
-.center-box .btn-info {
+.center-box .btn-primary {
 	width: 100%;
 }
 
@@ -139,7 +140,7 @@ li {
 }
 
 /* override bootstrap*/
-.btn-info {
+.btn-primary {
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #49afcd;
@@ -154,21 +155,23 @@ li {
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	*background-color: #009f94;
 	/* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
-.btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
 	color: #ffffff;
 	background-color: #009f94;
 	*background-color: #00b7aa;
 }
-.btn-info:active, .btn-info.active {
+.btn-primary:active, .btn-primary.active {
 	background-color: #00b7aa \9;
 }
 
-.btn-info {
-	font-size: 150%;
+.btn-primary {
+	/*font-size: 150%;*/
+}
+.btn-large {
+	font-size: 150% !important;
 }
 
 footer hr {
@@ -327,7 +330,7 @@ input, button, select, textarea {
 	margin-top: 0;
 }
 
-.store .btn-info {
+.store .btn-primary {
 	font-size: 100%;
 }
 
@@ -385,7 +388,7 @@ input, button, select, textarea {
 }
 
 .store .widget-rating {
-	left: 100px;
+	right: 100px;
 	width: 80px;
 }
 
@@ -403,6 +406,9 @@ input, button, select, textarea {
 	margin-bottom: 20px;
 	height: 60px;
 	line-height: 60px;
+	position: relative;
+	background-color: #fff !important;
+	background-image: none !important;
 }
 
 .header .span8 * {
@@ -414,17 +420,12 @@ input, button, select, textarea {
 	font-size: 32px;
 }
 
-.header .form-inline input {
+.header .gadget-search{
 	text-align: left;
 }
 
 .header .gadget-search {
 	margin-left: 20px;
-}
-
-.header {
-	background-color: #fff !important;
-	background-image: none !important;
 }
 
 .btn-avatar {
@@ -444,15 +445,15 @@ input, button, select, textarea {
 
 .modal-body {
 	position: relative;
-	min-height: 350px;
+	/*min-height: 350px;*/
 }
-.modal-header h3 small{
-	font-size:12px;
-	margin-left:20px;
+.modal-header h3 small {
+	font-size: 12px;
+	margin-left: 20px;
 }
 .modal-left {
 	position: absolute;
-	width: 130px;
+	width: 140px;
 	left: 0;
 	background: #F5F6F7;
 	top: 0;
@@ -473,34 +474,38 @@ input, button, select, textarea {
 .modal-left .gadget-preview {
 	width: 100%;
 }
-.modal-left .btn-info {
+.modal-left .btn-primary {
 	margin-top: 10px;
 	width: 100%;
-	font-size: 14px;
 }
 .modal-right {
-	position: absolute;
 	left: 170px;
+	padding-top: 15px;
+	position: absolute;
 	right: 10px;
 	top: 0;
+	bottom: 0;
 }
-.modal-right h5{
+.modal-right h5 {
 	font-size: 12px;
-	font-weight:600;
+	font-weight: 600;
 }
 
 .modal-reviews ul {
-	height: 120px;
-	overflow-y: scroll;
+	bottom: 120px;
 	margin-left: 0;
+	overflow-y: scroll;
+	position: absolute;
+	top: 60px;
+	height: auto;
 }
 .modal-reviews ul li {
-	  border-bottom: 1px solid #F5F6F7;
-    display: block;
-    float: left;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    width: 95%;
+	border-bottom: 1px solid #F5F6F7;
+	display: block;
+	float: left;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	width: 95%;
 }
 .modal-reviews ul li span {
 	float: right;
@@ -514,33 +519,110 @@ input, button, select, textarea {
 	margin-left: 10px;
 }
 .modal-right form {
-	position: relative;
+
 }
 .modal-right form textarea {
 	left: 0;
 	position: absolute;
-	top: 0;
-width:100%;
-height:60px;
-padding:0;
-font-size:12px;
+	bottom: 46px;
+	width: 100%;
+	height: 60px;
+	padding: 0;
+	font-size: 12px;
 }
 .modal-right form button {
 	right: 0;
 	position: absolute;
-	top: 70px;
+	bottom: 10px;
 }
 .modal-right p, .modal-right span {
 	font-size: 12px;
 }
+
+.modal-gadget {
+	width: 700px;
+	margin-left: -350px;
+}
+.modal-gadget .modal-body {
+	min-height: 450px;
+}
+
+.modal-gadget .tab-content {
+	overflow: visible;
+}
+
+.modal-gadget-status{
+	border: 1px solid #DDDDDD;
+    border-radius: 15px 15px 15px 15px;
+     -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    color: #CCCCCC;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: 62px;
+    width: 120px;
+}
+
+.nav > li > a {
+	outline: none;
+}
+
+.reviews-loading{
+	text-align:center;
+}
+.reviews-loading img{
+	margin-right:10px;
+}
+.store-gadget-title:hover{
+	cursor: pointer;
+}
 /* responsive styles */
 
+@media (max-width: 500px) {
+	.navbar form * {
+		/*width:80% !important;*/
+		/*margin: 0 auto !important;*/
+	}
+	.header .span8 * {
+		text-align: center;
+	}
+	.link-add-gadget-location {
+		left: 20px;
+		position: absolute;
+		right: 20px;
+		top: 70px;
+		
+	}
+	.header {
+		height: 180px !important;
+	}
+
+	.header .gadget-search{
+		position: absolute;
+		top: 110px;
+		left: 20px;
+		right:30px;
+		margin-left:0;
+		text-align:left;
+	}
+	
+	.header .form-inline button{
+		position: absolute;
+		right:20px;
+		width:20px;
+		top:110px;
+	}
+}
 @media (min-width: 768px) and (max-width: 979px) {
 	.center-box input, .center-box button {
 		padding: 0;
 	}
 
-	.center-box .btn-info {
+	.center-box .btn-primary {
 		padding: 10px;
 	}
 
@@ -562,6 +644,16 @@ font-size:12px;
 		border-bottom: 1px solid #ccc;
 		content: "";
 		display: block;
+	}
+	.modal {
+		margin: 0 !important;
+		width: auto;
+	}
+	.header {
+		height: 120px;
+	}
+	.header .gadget-search{
+		margin-left:0;
 	}
 }
 

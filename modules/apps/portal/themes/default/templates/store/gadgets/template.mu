@@ -11,9 +11,9 @@
 				</div>
 				<div class="span8 pull-right">
 					<form class="form-inline">
-						<a href="#" class="btn">Add Gadget by location</a>
-						<input class="gadget-search" type="text" class="input" placeholder="Search for gadget">
-						<button id="" type="submit" class="btn">
+						<a class="btn link-add-gadget-location" href="#" class="btn">Add Gadget by location</a>
+						<input id="search" class="gadget-search" type="text" class="input" placeholder="Search for gadget">
+						<button id="btn-gadget-search" type="submit" class="btn">
 							<i class="icon-search icon-white"></i>
 						</button>
 					</form>
@@ -24,12 +24,15 @@
 </div>
 
 <!-- Modal -->
-<div class="modal hide" id="modal-gadget" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true" style="display: none">
+<div class="modal hide fade modal-gadget" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true" style="display: none">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 			×
 		</button>
 		<h3 id="modal-gadget-title">Loading...</h3>
+		<div class="modal-gadget-status">
+			<i class="icon-ok"></i> Already added
+		</div>
 	</div>
 	<div class="modal-body">
 		<div class="modal-left">
@@ -38,9 +41,7 @@
 					<img class="gadget-preview" src="{{appContext}}/themes/default/img/profile-pic.png">
 				</li>
 				<li>
-					<button class="btn btn-info">
-						Remove
-					</button>
+					<button id="addGadget2" class="btn btn-primary">Add Gadget</button>
 				</li>
 				<li>
 					<h4>User ratings</h4>
@@ -69,47 +70,111 @@
 			</ul>
 		</div>
 		<div class="modal-right">
-			<div class="modal-description">
-				<h5>Gadget Description</h5>
-				<p id="modal-gadget-desc">
-					Loading...
-				</p>
+			<ul class="nav nav-tabs">
+				<li>
+					<a href="#description" data-toggle="tab">Gadget Description</a>
+				</li>
+				<li>
+					<a href="#reviews" data-toggle="tab">Reviews</a>
+				</li>
+
+			</ul>
+
+			<div class="tab-content">
+				<div class="tab-pane active" id="description">
+					<div class="modal-description">
+						
+						<p id="modal-gadget-desc">
+							Loading...
+						</p>
+
+					</div>
+				</div>
+				<div class="tab-pane" id="reviews">
+					<div class="modal-reviews">
+						
+						<ul id="ul-reviews" data-loading="false">
+							<li>
+								<p>
+									Review 1 goes here...
+								</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+							</li>
+							<li>
+								<p>
+									Review 1 goes here...
+								</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+							</li>
+							<li>
+								<p>
+									Review 1 goes here...
+								</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+							</li>
+							<li>
+								<p>
+									Review 1 goes here...
+								</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+							</li>
+							<li>
+								<p>
+									Review 1 goes here...
+								</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+							</li>
+							<li>
+								<p>
+									Review 1 goes here...
+								</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+							</li>
+							<li>
+								<p>
+									Review 1 goes here...
+								</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+							</li>
+							<li>
+								<p>
+									Review 1 goes here...
+								</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
+							</li>
+						</ul>
+						<form>
+							<textarea rows="3"></textarea>
+							<button type="submit" class="btn">
+								Submit
+							</button>
+						</form>
+					</div>
+				</div>
 
 			</div>
-			<div class="modal-reviews">
-					<h5>Reviews (12)</h5>
-				<ul>
-					<li>
-						<p>
-							Review 1 goes here...
-						</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
-					</li>
-					<li>
-						<p>
-							Review 1 goes here...
-						</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
-					</li>
-					<li>
-						<p>
-							Review 1 goes here...
-						</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
-					</li>
-					<li>
-						<p>
-							Review 1 goes here...
-						</p><span><img src="{{appContext}}/themes/default/img/profile-pic.png"> John Doe <small>12 Sep 2012</small></span>
-					</li>
-				</ul>
-				<form>
-					<textarea rows="3"></textarea>
-					<button type="submit" class="btn">
-						Submit
-					</button>
-				</form>
-			</div>
+
 		</div>
 	</div>
-	
+
+</div>
+
+<!-- Modal -->
+
+<div class="modal hide fade modal-add-gadget-location" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			×
+		</button>
+		<h3 id="myModalLabel">Add Gadget by location</h3>
+	</div>
+	<div class="modal-body">
+		<form>
+			<label>Enter the Gadget URL</label>
+			<input  class="input-xxlarge" type="text" placeholder="ex: http://domain.com/gadgets/mygadget.xml">
+			<span class="help-block">This can be any *.xml file written according to <a href="https://developers.google.com/gadgets/docs/spec">Google Gadget specification.</a> <a href="https://developers.google.com/gadgets/docs/basic">Learn how to write a basic gadget</a></span>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">
+			Cancel
+		</button>
+		<button class="btn btn-primary">
+			Add Gadget
+		</button>
+	</div>
 </div>
 
 <div class="container">
@@ -119,12 +184,12 @@
 		{{#each gadgets}}
 		<div class="img-rounded span4 widget">
 			<div class="widget-header">
-				<h4><a id="{{this.name}}" data-toggle="modal">{{this.name}}</a></h4>
+				<a id="{{this.name}}" data-toggle="modal" class="store-gadget-title" data-page="default" data-area="main" data-path="{{this.path}}"><h4>{{this.name}}</h4></a>
 
 				<ul class="widget-controls">
 
 					<li>
-						<a href="#"><i class="icon-resize-full"></i></a>
+						<a id="{{this.name}}" data-toggle="modal" class="store-gadget-title"><i class="icon-resize-full"></i></a>
 					</li>
 
 				</ul>
@@ -141,7 +206,7 @@
 			</div>
 
 			<div class="widget-footer">
-				<input type="button" class="btn btn-info btn-small" onclick="GadgetStore.addGadgetToUser('default', 'main', '{{this.path}}', '{{this.name}}')" value="Add Gadget">
+				<input type="button" id="addGadget1" class="btn btn-primary btn-small" onclick="GadgetStore.addGadgetToUser('default', 'main', '{{this.path}}', '{{this.name}}')" value="{{this.btnValue}}">
 
 				<ul class="widget-rating">
 					<li>

@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#"><img src="{{appContext}}/themes/{{theme}}/img/logo-wso2-gadget-server.png"></a>
+            <a class="brand" href="{{appContext}}"><img src="{{appContext}}/themes/{{theme}}/img/logo-wso2-gadget-server.png"></a>
 
             <div class="nav-collapse collapse">
 

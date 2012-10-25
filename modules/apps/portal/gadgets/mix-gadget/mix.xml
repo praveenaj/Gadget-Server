@@ -59,6 +59,8 @@
             lines: { show: true, steps: true }
         }
     ]);
+    
+  
 });
 
   </script>

@@ -2,12 +2,9 @@ $(function() {
 	$('.store-gadget-title').click(function() {
 		//TODO: show spinning wheel
 		$('.modal-gadget').modal( show = true, backdrop = false);
-		var gadgetName = $(this).attr('id');
-		var gadgetArea = $(this).attr('data-area');
 		var gadgetPath = $(this).attr('data-path');
-		var page =  $(this).attr('data-page');
-		var status = $('#addGadget1').attr('value');
-		GadgetStore.getGadgetToModal(page, gadgetArea, gadgetPath, gadgetName, status);
+		var status = $(this).attr('data-status');
+		GadgetStore.getGadgetToModal(gadgetPath,status);
 	});
 
 	$('.link-add-gadget-location').click(function() {

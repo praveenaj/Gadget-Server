@@ -40,9 +40,9 @@ var Caramel = require("caramel").Caramel;
     	case "getGadgetToModal":
     	
     		mod = Caramel.module("store/gadgets");
-    		gadgetName = request.getParameter("gadgetName");
+    		gadgetPath = request.getParameter("gadgetPath");
     	
-    		result = mod.getGadgetToModal(gadgetName);
+    		result = mod.getGadgetToModal(gadgetPath);
     		
     		if(result.error){
     			 obj = {

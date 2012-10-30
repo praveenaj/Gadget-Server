@@ -184,7 +184,7 @@
 		{{#each gadgets}}
 		<div class="img-rounded span4 widget">
 			<div class="widget-header">
-				<a id="{{this.name}}" data-toggle="modal" class="store-gadget-title" data-page="default" data-area="main" data-path="{{this.path}}"><h4>{{this.name}}</h4></a>
+				<a id="{{this.name}}" data-toggle="modal" class="store-gadget-title" data-status="{{this.btnValue}}" data-path="{{this.path}}"><h4>{{this.name}}</h4></a>
 
 				<ul class="widget-controls">
 
@@ -206,7 +206,7 @@
 			</div>
 
 			<div class="widget-footer">
-				<input type="button" id="addGadget1" class="btn btn-primary btn-small" onclick="GadgetStore.addGadgetToUser('default', 'main', '{{this.path}}', '{{this.name}}')" value="{{this.btnValue}}">
+				<button id="addGadget1" data-target="{{this.name}}" class="btn btn-primary btn-small" onclick="GadgetStore.addGadgetToUser('default', 'main', '{{this.path}}', '{{this.name}}')">{{this.btnValue}}</button>
 
 				<ul class="widget-rating">
 					<li>

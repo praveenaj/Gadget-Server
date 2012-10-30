@@ -7,21 +7,33 @@ var GadgetStore = GadgetStore || ( function() {
 				"gadgetPath" : gadgetPath,
 				"gadgetName" : gadgetName
 			}, function(result) {
-				console.log(result)
+				if(!result.error){
+					var btn = $('button[data-target=mix-gadget]');
+					if(btn.text() === "Remove"){
+						btn.text("Add Gadget");
+					} else {
+						btn.text("Remove");
+					}
+					
+				} else {
+					alert(result.error + ":" + result.message);
+				}
 			}, "json");
 		};
 
-		var getGadgetToModal = function(page, gadgetArea, gadgetPath, gadgetName, status) {
+		var getGadgetToModal = function(gadgetPath, status) {
 			$.post("/portal/apis/store/gadgets/store.jag", {
 				"action" : "getGadgetToModal",
-				"gadgetName" : gadgetName
+				"gadgetPath" : gadgetPath
 			}, function(result) {
 				
 				// if this gadget is already in the user gadgets
 					// show div .modal-gadget-status (by default it's hidden)
 					// change CTA button to "Remove"
-				// 
-				$('#addGadget').attr('onClick', 'GadgetStore.addGadgetToUser(\'default\', \'main\', \'' + gadgetPath + '\', \'' + gadgetName + '\')'); 
+				//
+				
+				//TODO: have unobstrusive JS 
+				$('#addGadget').attr('onClick', 'GadgetStore.addGadgetToUser(\'default\', \'main\', \'' + gadgetPath + '\', \'' + result["gadget"].name + '\')'); 
 				$('#modal-gadget-title').html(result["gadget"].name + "<small>By <a href='#'>" + result["gadget"].author + '</a>');
 				$('#modal-gadget-desc').text(result["gadget"].description);
 				$('#addGadget2').text(status);

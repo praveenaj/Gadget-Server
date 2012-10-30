@@ -1,65 +1,55 @@
 var getGadgets = function(path) {
 
-	var dataStore, gadgetsMeta, gadgets;
-
-	if (path == null) {
-		path = Caramel.module("manager").constants.PORTAL_GADGETS_PATH;
-	}
+	var dataStore, gadgetsMeta;
 
 	dataStore = Caramel.module("manager").getMetaDataStore();
+
+	if (path == null) {// get all gadgets
+		path = Caramel.module("manager").constants.PORTAL_GADGETS_PATH;
+
+	}
+
 	try {
 		gadgetsMeta = dataStore.get(path);
-		//get all gadgets in the path
 	} catch(e) {
 		if (log.isDebug) {
 			log.error(e.message + ": " + path);
 		}
 	}
-
-	gadgets = [];
 
 	if (gadgetsMeta != null) {
-		for (var i = 0; i < gadgetsMeta.getChildren().length; i++) {
-			var gadgetRegPath = gadgetsMeta.getChildren()[i];
-			var metaGadget = dataStore.get(gadgetRegPath);
-			var gadget = parse(metaGadget.content);
-			gadget.path = gadgetRegPath;
-			gadgets.push(gadget);
+
+		//if multiple gadgets are requested
+		if (typeof(gadgetsMeta.getChildren) != 'undefined') { 
+
+			var gadgets = [];
+
+			for (var i = 0; i < gadgetsMeta.getChildren().length; i++) {
+				var gadgetRegPath = gadgetsMeta.getChildren()[i];
+				var metaGadget = dataStore.get(gadgetRegPath);
+				var gadget = parse(metaGadget.content);
+				gadget.path = gadgetRegPath;
+				gadgets.push(gadget);
+			}
+
+			return gadgets;
+			
+		} else { // if a single gadget is requested
+			var gadget = parse(gadgetsMeta.content);
+			return gadget;
 		}
+
 	}
-	return gadgets;
-};
-
-var getGadget = function(name) {
-
-	var dataStore, gadget;
-	
-	path = Caramel.module("manager").constants.PORTAL_GADGETS_PATH;
-
-	dataStore = Caramel.module("manager").getMetaDataStore();
-
-	try {
-		res = dataStore.get(path + "/" + name);
-	} catch(e) {
-		if (log.isDebug) {
-			log.error(e.message + ": " + path);
-		}
-	}
-
-	if (res != null) {
-		gadget = parse(res.content);
-	}
-	return gadget;
 
 };
 
 /*var saveGadget = function(gadget, path) {
 
-	var dataStore = Caramel.module("manager").getMetaDataStore();
-	var resource = dataStore.newResource();
-	resource.content = stringify(that);
-	dataStore.put(path + '/' + that.name, resource);
-};*/
+ var dataStore = Caramel.module("manager").getMetaDataStore();
+ var resource = dataStore.newResource();
+ resource.content = stringify(that);
+ dataStore.put(path + '/' + that.name, resource);
+ };*/
 
 var renderGadget = function(gadget) {
 	var mod = require('gadget');

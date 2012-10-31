@@ -41,7 +41,13 @@
 					<img class="gadget-preview" src="{{appContext}}/themes/default/img/profile-pic.png">
 				</li>
 				<li>
-					<button id="addGadget2" class="btn btn-primary">Add Gadget</button>
+					<div class="modal-btn-cont">
+						<button class="btn btn-primary addGadget" class="btn btn-primary">
+							Add Gadget
+						</button>
+						
+						<div class='gadget-add-success' style="display:none"><i class='icon-ok'></i> Already added</div>
+					</div>
 				</li>
 				<li>
 					<h4>User ratings</h4>
@@ -83,7 +89,7 @@
 			<div class="tab-content">
 				<div class="tab-pane active" id="description">
 					<div class="modal-description">
-						
+
 						<p id="modal-gadget-desc">
 							Loading...
 						</p>
@@ -92,7 +98,7 @@
 				</div>
 				<div class="tab-pane" id="reviews">
 					<div class="modal-reviews">
-						
+
 						<ul id="ul-reviews" data-loading="false">
 							<li>
 								<p>
@@ -184,7 +190,7 @@
 		{{#each gadgets}}
 		<div class="img-rounded span4 widget">
 			<div class="widget-header">
-				<a id="{{this.name}}" data-toggle="modal" class="store-gadget-title" data-status="{{this.btnValue}}" data-path="{{this.path}}"><h4>{{this.name}}</h4></a>
+				<a id="{{this.name}}" data-toggle="modal" class="store-gadget-title" data-status="{{#if this.added}}true{{else}}false{{/if}}" data-path="{{this.path}}"><h4>{{this.name}}</h4></a>
 
 				<ul class="widget-controls">
 
@@ -206,28 +212,38 @@
 			</div>
 
 			<div class="widget-footer">
-				<button id="addGadget1" data-target="{{this.name}}" class="btn btn-primary btn-small" onclick="GadgetStore.addGadgetToUser('default', 'main', '{{this.path}}', '{{this.name}}')">{{this.btnValue}}</button>
+				<div>
+					{{#if this.added}}
+					<div class='gadget-add-success'>
+						<i class='icon-ok'></i> Already added
+					</div>
+					{{else}}
 
-				<ul class="widget-rating">
-					<li>
-						<i class="icon-star"></i>
-					</li>
-					<li>
-						<i class="icon-star"></i>
-					</li>
-					<li>
-						<i class="icon-star"></i>
-					</li>
-					<li>
-						<i class="icon-star-empty"></i>
-					</li>
-					<li>
-						<i class="icon-star-empty"></i>
-					</li>
-				</ul>
+					<button data-target="{{this.name}}" data-path="{{this.path}}" class="btn btn-primary btn-small addGadget">
+						Add Gadget
+					</button>
 
-				<small class="widget-added">12 added this</small>
+					<ul class="widget-rating">
+						<li>
+							<i class="icon-star"></i>
+						</li>
+						<li>
+							<i class="icon-star"></i>
+						</li>
+						<li>
+							<i class="icon-star"></i>
+						</li>
+						<li>
+							<i class="icon-star-empty"></i>
+						</li>
+						<li>
+							<i class="icon-star-empty"></i>
+						</li>
+					</ul>
 
+					<small class="widget-added">12 added this</small>
+					{{/if}}
+				</div>
 			</div>
 
 		</div>

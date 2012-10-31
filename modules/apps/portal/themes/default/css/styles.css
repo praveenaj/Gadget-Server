@@ -580,6 +580,13 @@ input, button, select, textarea {
 .store-gadget-title:hover{
 	cursor: pointer;
 }
+
+
+.gadget-add-success{
+	text-align:center;
+	color:#009F94;
+}
+
 /* responsive styles */
 
 @media (max-width: 500px) {

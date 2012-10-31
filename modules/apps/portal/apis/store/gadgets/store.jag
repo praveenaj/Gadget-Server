@@ -31,7 +31,8 @@ var Caramel = require("caramel").Caramel;
 	            };
 	        } else {
 	            obj = {
-	                error:false
+	                error:false,
+	                gadget:gadgetName
 	            }
 	        }
 	        print(obj);

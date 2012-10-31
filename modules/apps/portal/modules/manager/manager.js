@@ -23,12 +23,16 @@ var getMetaDataStore = function() {
 
 var getUserGadgetsPath = function(user, dashboardName, gadgetArea) {
 
-	var userGadgetRepo = Caramel.module("manager").constants.USERS_REPO + user.username;
+	/*
+	 var userGadgetRepo = Caramel.module("manager").constants.USERS_REPO + user.username;
 
-	userGadgetRepo = (dashboardName != undefined) ? userGadgetRepo + "/pages/" + dashboardName : userGadgetRepo;
+	 userGadgetRepo = (dashboardName != undefined) ? userGadgetRepo + "/pages/" + dashboardName : userGadgetRepo;
 
-	userGadgetRepo = (gadgetArea != undefined) ? userGadgetRepo + "/gadgetAreas/" + gadgetArea + "/gadgets" : userGadgetRepo;
-	
+	 userGadgetRepo = (gadgetArea != undefined) ? userGadgetRepo + "/gadgetAreas/" + gadgetArea + "/gadgets" : userGadgetRepo;
+	 */
+
+	var userGadgetRepo = Caramel.module("manager").constants.USERS_REPO + user.username + "/pages/" + dashboardName + "/gadgetAreas/" + gadgetArea + "/gadgets";
+
 	return userGadgetRepo;
 }
 

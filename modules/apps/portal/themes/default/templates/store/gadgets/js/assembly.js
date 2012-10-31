@@ -4,7 +4,7 @@ $(function() {
 		$('.modal-gadget').modal( show = true, backdrop = false);
 		var gadgetPath = $(this).attr('data-path');
 		var status = $(this).attr('data-status');
-		GadgetStore.getGadgetToModal(gadgetPath,status);
+		GadgetStore.getGadgetToModal(gadgetPath, status);
 	});
 
 	$('.link-add-gadget-location').click(function() {
@@ -15,6 +15,33 @@ $(function() {
 		var query = $('#search').val();
 		GadgetStore.searchGadget(query);
 
+	});
+
+	$('.addGadget').click(function() {
+		var path = $(this).attr("data-path");
+	
+		var gadgetName = $(this).data("target");
+		var page = 'default';
+		var gadgetArea = 'main';
+		GadgetStore.addGadgetToUser('' + page + '', '' + gadgetArea + '', '' + path + '', '' + gadgetName + '');
+		/*
+		$(this).fadeOut(1000, function() {
+			var cls = $('<div/>', {
+				'style' : 'right:10px;top:15px;width:12px;height:18px;cursor:pointer;padding:2px;position:absolute;border:solid gray 1px;',
+				'id' : 'cls',
+				'text' : 'Gadget added to ' + page,
+				'title' : 'Close'
+			});
+			$(this).html(cls).fadeIn(1000);
+		});
+		*/
+
+	});
+	
+	$('.modal-btn-cont > .addGadget').click(function(){
+		$(this).fadeOut(1000, function(){
+			$('.gadget-add-success').fadeIn(1000).html("<div class='gadget-add-success'><i class='icon-ok'></i> Gadget added</div>");
+		});
 	});
 
 	$('.nav-tabs a:first').tab('show');

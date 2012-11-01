@@ -16,7 +16,7 @@ log.isDebug = true;
             "appContext":site.context,
             "theme":site.theme.base,
             "header":{
-                    "name":"header/anonymous",
+                    "name":"header/store",
                     "inputs":{
                         "theme":site.theme.base
                     }

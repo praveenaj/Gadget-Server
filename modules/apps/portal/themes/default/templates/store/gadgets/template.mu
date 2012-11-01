@@ -1,7 +1,3 @@
-<!--
-<div style="position: absolute; top: 40px; width: 100%; z-index: -1; height: 70px; background: none repeat scroll 0px 0px rgb(245, 246, 247);   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); border-bottom: 1px solid rgb(204, 204, 204);"></div>
--->
-
 <div class="navbar navbar-static-top">
 	<div class="header navbar-inner">
 		<div class="container">
@@ -45,8 +41,10 @@
 						<button class="btn btn-primary addGadget" class="btn btn-primary">
 							Add Gadget
 						</button>
-						
-						<div class='gadget-add-success' style="display:none"><i class='icon-ok'></i> Already added</div>
+
+						<div class='gadget-add-success' style="display:none">
+							<i class='icon-ok'></i> Already added
+						</div>
 					</div>
 				</li>
 				<li>
@@ -195,7 +193,7 @@
 				<ul class="widget-controls">
 
 					<li>
-						<a id="{{this.name}}" data-toggle="modal" class="store-gadget-title"><i class="icon-resize-full"></i></a>
+						<a id="{{this.name}}" data-toggle="modal" class="store-gadget-title" data-status="{{#if this.added}}true{{else}}false{{/if}}" data-path="{{this.path}}"><i class="icon-resize-full"></i></a>
 					</li>
 
 				</ul>
@@ -250,3 +248,4 @@
 		{{/each}}
 
 	</div>
+</div>

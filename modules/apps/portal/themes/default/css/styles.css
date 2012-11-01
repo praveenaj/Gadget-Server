@@ -37,7 +37,7 @@ li {
 	margin-right: 10px;
 }
 
-.main-nav > li.active > a {
+.nav-dashboards > li.active > a {
 	background-color: #565656;
 }
 
@@ -186,7 +186,9 @@ input, button, select, textarea {
 	width: auto;
 }
 
-/* make gridster responsive */
+.tab-content {
+	overflow: visible !important;
+}
 
 /* Gridster styles */
 .gadgets {
@@ -214,9 +216,9 @@ input, button, select, textarea {
 	 */
 }
 /*
-[data-col="1"] {
-	left: 0 !important;
-}*/
+ [data-col="1"] {
+ left: 0 !important;
+ }*/
 
 .gridster .gs_w {
 
@@ -422,7 +424,7 @@ input, button, select, textarea {
 	font-size: 32px;
 }
 
-.header .gadget-search{
+.header .gadget-search {
 	text-align: left;
 }
 
@@ -553,42 +555,60 @@ input, button, select, textarea {
 	overflow: visible;
 }
 
-.modal-gadget-status{
+.modal-gadget-status {
 	border: 1px solid #DDDDDD;
-    border-radius: 15px 15px 15px 15px;
-     -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    color: #CCCCCC;
-    font-size: 12px;
-    height: 25px;
-    line-height: 25px;
-    position: absolute;
-    right: 20px;
-    text-align: center;
-    top: 62px;
-    width: 120px;
+	border-radius: 15px 15px 15px 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	color: #CCCCCC;
+	font-size: 12px;
+	height: 25px;
+	line-height: 25px;
+	position: absolute;
+	right: 20px;
+	text-align: center;
+	top: 62px;
+	width: 120px;
 }
 
 .nav > li > a {
 	outline: none;
 }
 
-.reviews-loading{
-	text-align:center;
+.reviews-loading {
+	text-align: center;
 }
-.reviews-loading img{
-	margin-right:10px;
+.reviews-loading img {
+	margin-right: 10px;
 }
-.store-gadget-title:hover{
+.store-gadget-title:hover {
 	cursor: pointer;
 }
 
-
-.gadget-add-success{
-	text-align:center;
-	color:#009F94;
+.gadget-add-success {
+	text-align: center;
+	color: #009F94;
 }
 
+
+#add-gadget{
+	height:120px;
+	text-align:center;
+	padding-top:30px;
+	float:none;
+	margin:0 auto;
+}
+#add-gadget span{
+	clear:both;
+	display:block;
+	margin-top:20px;
+	font-size: 18px;
+	font-weight:300px;
+	
+}
+#add-gadget a{
+	display:block;
+}
 /* responsive styles */
 
 @media (max-width: 500px) {
@@ -604,26 +624,25 @@ input, button, select, textarea {
 		position: absolute;
 		right: 20px;
 		top: 70px;
-		
 	}
 	.header {
 		height: 180px !important;
 	}
 
-	.header .gadget-search{
+	.header .gadget-search {
 		position: absolute;
 		top: 110px;
 		left: 20px;
-		right:30px;
-		margin-left:0;
-		text-align:left;
+		right: 30px;
+		margin-left: 0;
+		text-align: left;
 	}
-	
-	.header .form-inline button{
+
+	.header .form-inline button {
 		position: absolute;
-		right:20px;
-		width:20px;
-		top:110px;
+		right: 20px;
+		width: 20px;
+		top: 110px;
 	}
 }
 @media (min-width: 768px) and (max-width: 979px) {
@@ -661,26 +680,32 @@ input, button, select, textarea {
 	.header {
 		height: 120px;
 	}
-	.header .gadget-search{
-		margin-left:0;
+	.header .gadget-search {
+		margin-left: 0;
 	}
 }
 
+/* TODO: overriding data-col here makes 2,3 columns unable to drag */
 @media (min-width: 979px) and (max-width: 1200px) {
+
 	[data-col="2"] {
 		left: 320px !important;
 	}
+
 	[data-col="3"] {
 		left: 640px !important;
 	}
+
 }
 @media (min-width: 1200px) {
 	.gadgets .span4 {
 		width: 370px !important;
 	}
-	[data-col="3"] {
-		left: 800px !important;
-	}
+	/*
+	 [data-col="3"] {
+	 left: 800px !important;
+	 }*/
+
 }
 
 @media (max-width: 979px) {

@@ -12,11 +12,14 @@ Caramel.block("dashboard", {
 
 		for (var gadget in gadgetsMeta) {
 
+			// TODO: load positions from registry
 			var gadgetHtml = Caramel.module("gadget").renderGadget(gadgetsMeta[gadget]);
-
+			var tmp = parseInt(gadget) +1;
+			var col =  ( tmp % 3 ) ? tmp%3 : 3;
 			var g = {
 				content : gadgetHtml,
-				id : parseInt(gadget) +1
+				col : col,
+				row : 1
 			};
 
 			gadgets.push(g);

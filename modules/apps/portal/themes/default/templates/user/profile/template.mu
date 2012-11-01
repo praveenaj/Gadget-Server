@@ -39,14 +39,12 @@
 				<fieldset>
 
 					<div class="controls controls-row span4">
-						<span class="span4">
-							<label>First name</label>
+						<span class="span4"> <label>First name</label>
 							<input class="span3" id="fname" name="firstname" type="text" value="John">
 						</span>
 					</div>
 					<div class="controls controls-row span4">
-						<span class="span3">
-							<label>Last name</label>
+						<span class="span3"> <label>Last name</label>
 							<input class="span3" id="lname" name="lastname" type="text" value="Doe">
 						</span>
 					</div>
@@ -87,4 +85,4 @@
 		</div>
 
 	</div>
-
+</div>

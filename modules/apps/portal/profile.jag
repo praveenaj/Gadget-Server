@@ -13,7 +13,7 @@ log.isDebug = true;
             "theme":site.theme.base,
             "title":"Profile",
             "header":{
-                "name":"header/anonymous",
+                "name":"header/profile",
                 "inputs":{
                     "theme":site.theme.base
                 }

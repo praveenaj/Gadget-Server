@@ -16,7 +16,7 @@ log.isDebug = true;
             "appContext":site.context,
             "theme":site.theme.base,
             "header":{
-                    "name":"header/anonymous",
+                    "name":"header/dashboard",
                     "inputs":{
                         "theme":site.theme.base
                     }

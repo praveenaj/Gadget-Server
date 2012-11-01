@@ -4,8 +4,9 @@
 	<div class="gridster row">
 		<ul class="span12">
 			{{#each gadgets}}
+			
 			<!-- load row and column from the db, auto-adjust height according to iframe height-->
-			<li class="widget img-rounded span4" data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+			<li class="widget img-rounded span4" data-row="1" data-col="{{this.id}}" data-sizex="1" data-sizey="1">
 				<div style="height: 100%">
 					<div class="widget-header">
 						<h2>Widget Title</h2>
@@ -26,7 +27,7 @@
 						</ul>
 					</div>
 					<div class="widget-content">
-						{{{ this }}}
+						{{{ this.content }}}
 					</div>
 
 				</div>

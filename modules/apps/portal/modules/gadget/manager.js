@@ -2,6 +2,8 @@ var getGadgets = function(path) {
 
 	var dataStore, gadgetsMeta;
 
+	var log = new Log();
+
 	dataStore = Caramel.module("manager").getMetaDataStore();
 
 	if (path == null) {// get all gadgets
@@ -20,21 +22,29 @@ var getGadgets = function(path) {
 	if (gadgetsMeta != null) {
 
 		//if multiple gadgets are requested
-		if (typeof(gadgetsMeta.getChildren) != 'undefined') { 
+		if ( typeof (gadgetsMeta.getChildren) != 'undefined') {
 
 			var gadgets = [];
 
-			for (var i = 0; i < gadgetsMeta.getChildren().length; i++) {
+			log.info("Children: " + gadgetsMeta.getChildren().length);
+
+			// TODO: undefined additional child without -1
+			// with -1, store doesn't show the last widget, but in dashboard shows all.
+			for (var i = 0; i < gadgetsMeta.getChildren().length -1; i++) {
+
 				var gadgetRegPath = gadgetsMeta.getChildren()[i];
 				var metaGadget = dataStore.get(gadgetRegPath);
+				
+				
 				var gadget = parse(metaGadget.content);
 				gadget.path = gadgetRegPath;
 				gadgets.push(gadget);
+
 			}
 
 			return gadgets;
-			
-		} else { // if a single gadget is requested
+
+		} else {// if a single gadget is requested
 			var gadget = parse(gadgetsMeta.content);
 			return gadget;
 		}

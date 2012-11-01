@@ -213,9 +213,11 @@ input, button, select, textarea {
 	 transition: opacity .6s;
 	 */
 }
+/*
 [data-col="1"] {
 	left: 0 !important;
-}
+}*/
+
 .gridster .gs_w {
 
 	cursor: pointer;

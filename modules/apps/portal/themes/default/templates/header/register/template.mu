@@ -9,7 +9,7 @@
 				<ul class="nav pull-right">
 
 					<li>
-						<a href="#">Help</a>
+						<a href="#" rel="tooltip" title="Help"> <i class="icon-question-sign icon-large"></i> </a>
 					</li>
 
 				</ul>

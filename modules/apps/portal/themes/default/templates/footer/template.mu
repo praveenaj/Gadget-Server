@@ -13,8 +13,8 @@
 <script src="{{appContext}}/themes/{{theme}}/js/bootstrap.js"></script>
 -->
 <script type="text/javascript" src="themes/default/js/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="themes/default/js/jquery.gridster.js"></script>
-<script src="themes/default/js/bootstrap.js"></script>
+<script type="text/javascript" src="themes/default/js/jquery.gridster.min.js"></script>
+<script src="themes/default/js/bootstrap.min.js"></script>
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>

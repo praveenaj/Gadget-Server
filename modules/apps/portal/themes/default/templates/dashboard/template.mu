@@ -1,5 +1,5 @@
-<div class="navbar navbar-static-top">
-	<div class="header navbar-inner">
+<div class="navbar navbar-inverse navbar-static-top">
+	<div class="header navbar-inner header-dashboard-pages">
 		<div class="container">
 			<div class="row">
 				<ul id="myTab" class="nav nav-tabs">

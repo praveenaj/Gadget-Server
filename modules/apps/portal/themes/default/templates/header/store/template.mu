@@ -18,12 +18,11 @@
 						</ul>
 					</li>
 					<li>
-						<a href="#">Signout</a>
+						<a href="#" rel="tooltip" title="Signout"> <i class="icon-signout icon-large"></i> </a>
 					</li>
 					<li>
-						<a href="#">Help</a>
+						<a href="#" rel="tooltip" title="Help"> <i class="icon-question-sign icon-large"></i> </a>
 					</li>
-
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

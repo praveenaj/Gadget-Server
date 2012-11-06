@@ -1,0 +1,33 @@
+<%
+var Caramel = require("caramel").Caramel;
+var log = new Log(); ( function() {
+	var mod, obj, result, username, 
+	
+	 action = request.getParameter("action"), 
+	 msg = require("/conf/ui-messages.jag");
+	if(action === "listgadgets") {
+		
+		mod = Caramel.module("dashboard");
+		user = request.getParameter("username");
+		dashboardname = request.getParameter("dashboardname");
+		gadgetarea = request.getParameter("gadgetarea");
+		
+		if(Caramel.getUser() != null) {
+			result = mod.listGadgetsForDashboard(Caramel.getUser(), dashboardname, gadgetarea);
+			print(result);
+			
+		}else{
+		print({
+			error : true,
+			message : msg.error.authErrorAction(action)
+		});
+		}
+	} else {
+		print({
+			error : true,
+			message : msg.error.invalidAction(action)
+		});
+	}
+}());
+
+%>

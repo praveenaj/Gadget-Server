@@ -9,5 +9,8 @@ Caramel.module("gadget", {
 
     renderGadget:function (gadget) {
         return Caramel.require(Caramel.getModulesDir() + "gadget/manager.js").renderGadget.apply(this, arguments);
+    },
+	getGadgetURLs:function () {
+        return Caramel.require(Caramel.getModulesDir() + "gadget/manager.js").getGadgetURLs.apply(this, arguments);
     }
 });

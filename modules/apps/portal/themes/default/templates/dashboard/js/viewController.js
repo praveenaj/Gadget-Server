@@ -1,6 +1,6 @@
 $(function() {
 	$.ajax({
-		url : apiurl+'portal/dashboards/api.jag?action=listgadgets&dashboardname=default&gadgetarea=main&username=admin',
+		url : 'portal/dashboards/api.jag?action=listgadgets&dashboardname=default&gadgetarea=main&username=admin',
 		dataType : 'json',
 		success : function(data) {
 			$.each(data.gadgeturls, function() {

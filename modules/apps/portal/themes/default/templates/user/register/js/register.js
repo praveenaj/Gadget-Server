@@ -3,7 +3,7 @@ var User = User || ( function () {
         var p1 = $("#password1").val();
         var p2 = $("#password2").val();
         if (p1 == p2) {
-            $.post("/portal/apis/user/register/register.jag", {
+            $.post("/portal/apis/portal/user/register.jag", {
                     action:"register",
                     username:$("#username").val(),
                     password:p1,
@@ -35,7 +35,7 @@ var User = User || ( function () {
     };
 
     var userExists = function () {
-        $.get("/portal/apis/user/register/register.jag", {
+        $.get("/portal/apis/portal/user/register.jag", {
                 action:"userExists",
                 username:$("#username").val()},
             function (result) {

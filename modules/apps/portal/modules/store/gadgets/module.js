@@ -4,6 +4,10 @@ Caramel.module("store/gadgets", {
         return Caramel.require(Caramel.getModulesDir() + "store/gadgets/store.js").getGadgetsToStore.apply(this, arguments);
     },
 
+    getGadget:function () {
+        return Caramel.require(Caramel.getModulesDir() + "store/gadgets/store.js").getGadget.apply(this, arguments);
+    },
+
     addGadgetToUser:function () {
         return Caramel.require(Caramel.getModulesDir() + "store/gadgets/store.js").addGadgetToUser.apply(this, arguments);
     },

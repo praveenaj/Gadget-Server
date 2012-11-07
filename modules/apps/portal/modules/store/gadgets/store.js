@@ -15,6 +15,13 @@ var getGadgetsToStore = function() {
 	return gadgetsList;
 };
 
+var getGadget = function(name) {
+    var gadget = Caramel.module("gadget").getGadgets(
+        Caramel.module("manager").constants.PORTAL_GADGETS_PATH + "/" + name);
+    gadget.added = isGadgetAdded(gadget.name);
+    return gadget;
+};
+
 // TODO: implement a mechanism to run SQL like queries in the backend
 // without getting a JSON object that contains everything and
 // filtering it out.

@@ -1,0 +1,32 @@
+<%
+/**
+* http://localhost:9763/portal/apis/store/api.jag?action=list
+* http://localhost:9763/portal/apis/store/api.jag?action=search&query=mygadget
+* http://localhost:9763/portal/apis/store/api.jag?action=get&name=mygadget
+*/
+(function() {
+    var Caramel = require("caramel").Caramel,
+        errors = require("/conf/api-messages.js").errors;
+
+    if(!Caramel.module("user").isUserLoggedIn()) {
+        print(errors.unauthorized());
+        return;
+    }
+
+    switch (request.getParameter("action")) {
+        case "list":
+            print(Caramel.module("store/gadgets").getGadgetsToStore());
+            return;
+        case "search":
+            //TODO
+            //request.getParameter("query");
+            //print search results
+            return;
+        case "get":
+            print(Caramel.module("store/gadgets").getGadget(request.getParameter("name")));
+            return;
+        default:
+            print(errors.actionNotFound());
+    }
+})();
+%>

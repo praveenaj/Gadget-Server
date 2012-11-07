@@ -3,7 +3,7 @@ var User = User || ( function () {
         $("#loginBtn").addClass("disabled");
         $("#signin").hide();
         $("#loading").show();
-        $.post("/portal/apis/user/login/login.jag", {
+        $.post("/portal/apis/portal/user/login.jag", {
                 action:"login",
                 username:$("#username").val(),
                 password:$("#password").val() },

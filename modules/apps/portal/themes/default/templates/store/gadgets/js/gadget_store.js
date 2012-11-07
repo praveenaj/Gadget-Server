@@ -1,6 +1,6 @@
 var GadgetStore = GadgetStore || ( function() {
 		var addGadgetToUser = function(page, gadgetArea, gadgetPath, gadgetName) {
-			$.post("/portal/apis/store/gadgets/store.jag", {
+			$.post("/portal/apis/portal/gadgets/api.jag", {
 
 				"action" : "addGadgetToUser",
 				"page" : page,
@@ -22,7 +22,7 @@ var GadgetStore = GadgetStore || ( function() {
 		};
 
 		var getGadgetToModal = function(gadgetPath, status) {
-			$.post("/portal/apis/store/gadgets/store.jag", {
+			$.post("/portal/apis/portal/gadgets/api.jag", {
 				"action" : "getGadgetToModal",
 				"gadgetPath" : gadgetPath
 			}, function(result) {
@@ -52,7 +52,7 @@ var GadgetStore = GadgetStore || ( function() {
 		};
 
 		var searchGadget = function(query) {
-			$.post("/portal/apis/store/gadgets/store.jag", {
+			$.post("/portal/apis/portal/gadgets/api.jag", {
 				"action" : "search",
 				"query" : query
 			}, function(result) {

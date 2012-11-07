@@ -20,12 +20,16 @@
 		</div>
 	</div>
 </div>
+<div class="container">
+<div class="span13"></div>
+	            <input class="span7" id="gadgetUrl"  type="text" placeholder="Type gadget url">
+				<button id="preloadAndAddGadget" class="btn btn-action" type="button">Add Gadget</button>
 
 <div class="container">
 	<div class="row">
 		<div class="tab-content">
 			<div id="home" class="tab-pane active">
-				<div class="gadgets">
+				<div class="gadgets" id="gadgets">
 					<div class="gridster row">
 						<ul class="span12">
 							{{#each gadgets}}
